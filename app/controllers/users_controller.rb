@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       sign_in(@user)
       redirect_to(root_path, flash: { success: "User Created!"})
     else
+      flash[:warning] = "Invalid Attribrutes"
       render :new
     end
   end
