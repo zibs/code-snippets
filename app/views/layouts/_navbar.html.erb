@@ -1,0 +1,33 @@
+<nav class="navbar navbar-full navbar-dark bg-primary">
+  <div class="container">
+    <%= link_to fa_icon("exchange"), root_path, class: "code-logo fa-3x" %>
+
+  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
+  <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
+      <ul class="nav navbar-nav">
+          <strong><%= link_to "</snippets>", root_path, class: "text-lg-center nav-link brand-homepage" %></strong>
+        <li class="nav-item <%# 'active' if current_page?(new_question_path) %>">
+          <%# link_to "Ask a Question", new_question_path, class: "nav-link" %>
+        </li>
+        <% if user_signed_in? %>
+        <li class="nav-item <%# 'active' if current_page?(favourites_path) %>">
+          <%# link_to "Fav Q's", favourites_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(edit_user_path(current_user)) %>">
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(sessions_path) %>">
+          <%= link_to "Log out", sessions_path, method: :delete, class: "nav-link" %>
+        </li>
+        <% else %>
+        <li class="nav-item <%= 'active' if current_page?(new_user_path) %>">
+          <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(new_session_path) %>">
+          <%= link_to "Sign In", new_session_path, class: "nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+  </div>
+</div>
+</nav>
