@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'users#new'
+  root 'snippets#index'
 
   resources :users
+  resources :snippets
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end

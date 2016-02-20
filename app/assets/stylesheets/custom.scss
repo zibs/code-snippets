@@ -1,4 +1,12 @@
 @import "bootstrap";
+html {
+  // min-height: 100%;
+  // background: -webkit-linear-gradient(#ededed, #fafafa);
+}
+body {
+  min-height: 100%;
+  background: -webkit-linear-gradient(#ededed, #fafafa);
+}
 
 a.code-logo {
   color: white;
@@ -11,4 +19,26 @@ a.code-logo {
 }
 .navbar-nav .nav-item {
 float: right;
+}
+.title {
+  padding: 30px 50px;
+}
+.nf {
+  color: rgb(255, 222, 0) !important;
+}
+.no {
+  color: rgb(2, 190, 105) !important;
+}
+div.highlight {
+  border-radius: 10px;
+  padding: 25px;
+  background-color: rgba(236, 235, 229, 0.744);
+  font-size: 1.2em;
+}
+
+.snippet-Ruby {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(198, 47, 102, 1);
 }

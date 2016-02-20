@@ -1,0 +1,46 @@
+<h1 class = "title text-lg-center">All Public Snippets (<%= @snippets.length %>)</h1>
+
+<!-- <div class="col-md-10 col-md-offset-1"> -->
+  <!-- <div class="row"> -->
+    <ul class="nav nav-pills ">
+      <!-- <li class="active"><a href="">All</a></li> -->
+      <li class = "nav-item"><a class = "nav-link" href="">Ruby</a></li>
+      <li class = "nav-item"><a class = "nav-link" href="">HTML</a></li>
+      <li class = "nav-item"><a class = "nav-link" href="">JavaScript</a></li>
+      <li class = "nav-item"><a class = "nav-link" href="">CSS</a></li>
+    </ul>
+
+  <!-- </div> -->
+
+
+<% if @snippets %>
+<div class="row">
+  <div class="form-group-lg col-md-10 col-md-offset-1">
+    <% @snippets.each do |snippet| %>
+     <div class="panel panel-code <%= html_kind(snippet.kind)[:color] %>">
+       <div class="panel-heading">
+         <%= link_to "#{snippet.title}", snippet_path(snippet)  %>
+         <span class="pull-right">
+          <%= html_kind(snippet.kind)[:icon]%>
+         </span>
+       </div>
+     </div>
+    <% end %>
+
+
+
+    <!-- <table class="table table-striped"> -->
+      <%# @snippets.each do |snippet| %>
+        <!-- <tr> -->
+          <!-- <td><%# link_to snippet.title, snippet_path(snippet) %></td> -->
+        <!-- </tr> -->
+      <%# end %>
+    <!-- </table> -->
+  </div>
+</div>
+<section class="row">
+  <div class="col-md-6 col-md-offset-3 text-lg-center">
+    <%= paginate @snippets %>
+  </div>
+</section>
+<% end %>

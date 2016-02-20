@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="snippet-display form-group-lg col-md-8 col-md-offset-2">
+      <h1 class = "snippet-<%= @snippet.kind %>"><%= @snippet.title %>
+        <%= html_kind(@snippet.kind)[:icon]%>
+       </h1>
+      <%= raw(Pygments.highlight(@snippet.code, lexer: @snippet.kind))   %>
+      <p><%= link_to "EDIT", edit_snippet_path(@snippet), class: "text-muted" %></p>
+      <p><%= link_to "DELETE", snippet_path(@snippet), method: :delete, data: { confirm: "Are you sure??"}, class: "text-muted" %></p>
+  </div>
+</div>

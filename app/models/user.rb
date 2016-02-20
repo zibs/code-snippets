@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :snippets, dependent: :destroy
+
   VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   # temporarily store password in memory
   # attr_accessor :password

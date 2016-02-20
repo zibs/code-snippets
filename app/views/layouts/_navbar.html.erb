@@ -16,6 +16,13 @@
         <li class="nav-item <%= 'active' if current_page?(edit_user_path(current_user)) %>">
           <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>
         </li>
+
+        <li class="nav-item <%= 'active' if current_page?(edit_user_path(current_user)) %>">
+          <%= link_to "Create Snippet", new_snippet_path, class: "nav-link" %>
+        </li>
+
+
+
         <li class="nav-item <%= 'active' if current_page?(sessions_path) %>">
           <%= link_to "Log out", sessions_path, method: :delete, class: "nav-link" %>
         </li>
