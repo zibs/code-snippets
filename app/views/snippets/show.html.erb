@@ -3,7 +3,8 @@
       <h1 class = "snippet-<%= @snippet.kind %>"><%= @snippet.title %>
         <%= html_kind(@snippet.kind)[:icon]%>
        </h1>
-      <%= raw(Pygments.highlight(@snippet.code, lexer: @snippet.kind))   %>
+      <%# raw(Pygments.highlight(@snippet.code, lexer: @snippet.kind)) %>
+      <%= markdown(@snippet.code)   %>
       <p><%= link_to "EDIT", edit_snippet_path(@snippet), class: "text-muted" %></p>
       <p><%= link_to "DELETE", snippet_path(@snippet), method: :delete, data: { confirm: "Are you sure??"}, class: "text-muted" %></p>
   </div>
