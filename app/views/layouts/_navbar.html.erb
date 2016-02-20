@@ -10,8 +10,8 @@
           <%# link_to "Ask a Question", new_question_path, class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
-        <li class="nav-item <%# 'active' if current_page?(favourites_path) %>">
-          <%# link_to "Fav Q's", favourites_path, class: "nav-link" %>
+        <li class="nav-item <%= 'active' if current_page?(secret_snippets_path) %>">
+          <%= link_to "Secret Snippets", secret_snippets_path, class: "nav-link" %>
         </li>
         <li class="nav-item <%= 'active' if current_page?(edit_user_path(current_user)) %>">
           <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>

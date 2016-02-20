@@ -5,8 +5,10 @@ class Snippet < ActiveRecord::Base
   validates :kind, presence: true
   validates :title, presence: true, uniqueness: true
   validates :code, presence: true
-  
+
   scope :recent, ->( number = 5){ order("created_at DESC").limit(number) }
+  scope :public_snippet, -> {where({private: false})}
+  scope :private_snippet, -> {where({private: true})}
 
    KIND_RUBY         = "Ruby"
    KIND_HTML         = "HTML"

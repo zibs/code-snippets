@@ -4,7 +4,15 @@ class SnippetsController < ApplicationController
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
-    @snippets = Snippet.recent(10).page(params[:page]).per(10)
+    if user_signed_in?
+      @snippets = current_user.snippets.where("private = ? or private = ?", true, false).page(params[:page]).per(10)
+    else
+      @snippets = Snippet.public_snippet.order("created_at DESC").page(params[:page]).per(10)
+    end
+  end
+
+  def secret_snippets
+    @snippets = current_user.snippets.private_snippet.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -58,7 +66,5 @@ class SnippetsController < ApplicationController
       redirect_to root_path , flash: { info: "Access Denied" }
       end
     end
-
-
 
 end

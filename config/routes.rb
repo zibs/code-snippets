@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'snippets#index'
 
   resources :users
+  get "/secret-snippets" => "snippets#secret_snippets", as: :secret_snippets
   resources :snippets
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
