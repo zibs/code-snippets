@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
             format: VALID_EMAIL_REGEX
 
   def full_name
-    "#{first_name} #{last_name}".titleize
+    "#{first_name} #{last_name}".titleize.strip
   end
 
 end
