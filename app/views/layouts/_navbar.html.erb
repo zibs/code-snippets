@@ -1,26 +1,26 @@
 <nav class="navbar navbar-full navbar-dark bg-primary">
   <div class="container">
-    <%= link_to fa_icon("exchange"), root_path, class: "code-logo fa-3x" %>
+    <%= link_to fa_icon("code-fork"), root_path, class: "code-logo fa-3x" %>
 
   <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
   <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
       <ul class="nav navbar-nav">
-          <strong><%= link_to "</snippets>", root_path, class: "text-lg-center nav-link brand-homepage" %></strong>
+          <strong><%= link_to "<code></snippets>", root_path, class: "text-lg-center nav-link brand-homepage" %></strong>
         <li class="nav-item <%# 'active' if current_page?(new_question_path) %>">
           <%# link_to "Ask a Question", new_question_path, class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
         <li class="nav-item <%= 'active' if current_page?(sessions_path) %>">
-          <%= link_to "Log out", sessions_path, method: :delete, class: "nav-link" %>
+          <%= link_to "log out", sessions_path, method: :delete, class: "nav-link" %>
           <li class="nav-item <%= 'active' if current_page?(edit_user_path(current_user)) %>">
-            <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>
+            <%= link_to "edit profile", edit_user_path(current_user), class: "nav-link" %>
           </li>
 
           <li class="nav-item <%= 'active' if current_page?(edit_user_path(current_user)) %>">
-            <%= link_to "Create Snippet", new_snippet_path, class: "nav-link" %>
+            <%= link_to "create snippet", new_snippet_path, class: "nav-link" %>
           </li>
         <li class="nav-item <%= 'active' if current_page?(secret_snippets_path) %>">
-          <%= link_to "Secret Snippets", secret_snippets_path, class: "nav-link" %>
+          <%= link_to "secret snippets", secret_snippets_path, class: "nav-link" %>
         </li>
 
 

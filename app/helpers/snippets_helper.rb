@@ -8,7 +8,7 @@ module SnippetsHelper
      when "html"
        {color: "panel-html", icon: fa_icon('html5'), text: "HTML" }
      when "javascript"
-       {color: "panel-javascript", icon: "js", text: "JavaScript" }
+       {color: "panel-javascript", icon: fa_icon("coffee"), text: "JavaScript" }
      when "css"
        {color: "panel-css", icon: fa_icon('css3'), text: "CSS" }
      else

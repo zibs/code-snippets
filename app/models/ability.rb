@@ -12,7 +12,7 @@ class Ability
     #   end
 
     can :manage, Snippet do |snippet|
-      snippet.user = user
+      snippet.user == user
     end
     #
     # The first argument to `can` is the action you are giving the user

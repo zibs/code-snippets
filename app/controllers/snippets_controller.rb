@@ -4,15 +4,19 @@ class SnippetsController < ApplicationController
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @snippets = current_user.snippets.where("private = ? or private = ?", true, false).page(params[:page]).per(10)
-    else
-      @snippets = Snippet.public_snippet.order("created_at DESC").page(params[:page]).per(10)
-    end
+#     if user_signed_in?
+#       # @snippets = current_user.snippets.where("private = ? AND private = ?", true, false).joins(Snippet.public_snippet.order("created_at DESC"))
+#       @snippets = Snippet.where("private = ? AND #{current_user.snippets} = ?", false, true)
+#       # @snippets = Snippet.where(["private = ? OR #{current_user.snippets.private_snippet} = ?", false, true ])
+# # @snippets = (Snippet.public_snippet.order("created_at DESC") + current_user.snippets.private_snippet.order("created_at DESC"))
+#     else
+  # @snippets = Snippet.where(["private = ? OR #{current_user.snippets.private_snippet} = ?", false, true])
+      @snippets = Snippet.public_snippet.order("created_at DESC")
+    # end
   end
 
   def secret_snippets
-    @snippets = current_user.snippets.private_snippet.order("created_at DESC").page(params[:page]).per(10)
+    @snippets = current_user.snippets.private_snippet.order("created_at DESC")
   end
 
   def new

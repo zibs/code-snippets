@@ -5,7 +5,8 @@
        </h1>
       <%# raw(Pygments.highlight(@snippet.code, lexer: @snippet.kind)) %>
       <%= markdown(@snippet.code)   %>
-      <p><%= link_to "EDIT", edit_snippet_path(@snippet), class: "text-muted" %></p>
-      <p><%= link_to "DELETE", snippet_path(@snippet), method: :delete, data: { confirm: "Are you sure??"}, class: "text-muted" %></p>
+      <% if can? :manage, @snippet %>
+      <p><%= link_to "EDIT", edit_snippet_path(@snippet), class: "text-muted" %> <%= link_to "DELETE", snippet_path(@snippet), method: :delete, data: { confirm: "Are you sure??"}, class: "text-muted" %></p>
+      <% end %>
   </div>
 </div>

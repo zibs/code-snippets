@@ -1,7 +1,14 @@
 @import "bootstrap";
+
 html {
-    overflow-y: scroll;
+    min-height: 100%;
 }
+body {
+    min-height: 100%;
+       background: linear-gradient(rgba(255, 255, 255, 0.73),rgba(197, 227, 252, 0.27));
+       margin-bottom: 50px;
+}
+
 section {
     overflow: auto;
 }
@@ -13,9 +20,17 @@ a.code-logo {
   display: inline-block;
   float: left;
 }
-#exCollapsingNavbar2 > ul > strong>a.brand-homepage {
-  font-size: 1.5em;
-  color: white;
+#exCollapsingNavbar2 > ul {
+  font-family: monospace;
+
+  > strong > a.brand-homepage {
+    font-size: 1.8em;
+    color: white;
+    font-family: monospace;
+  }
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8)
 }
 .navbar-nav .nav-item {
 float: right;
@@ -40,7 +55,7 @@ div.highlight {
   margin-top: 15px;
   padding: 10px;
   border-radius: 10px;
-  // background-color: rgba(198, 47, 102, 1);
+
 }
 ul.nav-codes {
 
@@ -57,11 +72,12 @@ div.tab-content  {
 
 #ruby {
   border-radius: 10px;
-  background-color: rgba(198, 47, 102, 0.4);
+  background-color: rgba(198, 47, 102, 0.2);
   color: rgb(56, 56, 56);
 
   div {
     border-radius: 5px;
+    padding: 10px 5px;
     a  {
       color: rgb(56, 56, 56);
       padding-left: 15px;
@@ -69,17 +85,19 @@ div.tab-content  {
     }
   }
   div:nth-child(2n) {
-    background-color:rgba(199, 0, 125, 0.4);
+    background-color:rgba(199, 0, 125, 0.2);
   }
 }
 
 #html {
   border-radius: 10px;
-  background-color: rgba(198, 47, 102, 0.4);
+  background-color: rgba(175, 255, 158, 0.35);
   color: rgb(56, 56, 56);
 
   div {
     border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px 5px;
     a  {
       color: rgb(56, 56, 56);
       padding-left: 15px;
@@ -87,17 +105,19 @@ div.tab-content  {
     }
   }
   div:nth-child(2n) {
-    background-color:rgba(199, 0, 125, 0.4);
+    background-color:rgba(68, 240, 85, 0.4);
   }
 }
 
 #css {
   border-radius: 10px;
-  background-color: rgba(198, 47, 102, 0.4);
+  background-color: rgba(255, 180, 102, 0.4);
   color: rgb(56, 56, 56);
 
   div {
     border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px 5px;
     a  {
       color: rgb(56, 56, 56);
       padding-left: 15px;
@@ -105,17 +125,19 @@ div.tab-content  {
     }
   }
   div:nth-child(2n) {
-    background-color:rgba(199, 0, 125, 0.4);
+    background-color:rgba(255, 162, 116, 0.4);
   }
 }
 
 #javascript {
   border-radius: 10px;
-  background-color: rgba(198, 47, 102, 0.4);
+  background-color: rgba(92, 194, 232, 0.2);
   color: rgb(56, 56, 56);
 
   div {
     border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px 5px;
     a  {
       color: rgb(56, 56, 56);
       padding-left: 15px;
@@ -123,6 +145,38 @@ div.tab-content  {
     }
   }
   div:nth-child(2n) {
-    background-color:rgba(199, 0, 125, 0.4);
+    background-color:rgba(79, 255, 244, 0.12);
   }
+}
+
+
+// NEW SNIPPET
+#snippet-code {
+font-family: monospace;
+}
+.create-code {
+  // height: 500px;
+}
+
+// pagination
+
+nav.pagination {
+  font-size: 0.6em;
+}
+
+body > main > div:nth-child(2) > nav > ul > li:nth-child(1) > a {
+  background-color: rgb(255, 64, 167) !important;
+  color: black;
+}
+body > main > div:nth-child(2) > nav > ul > li:nth-child(2) > a {
+  background-color: rgba(64, 255, 77, 0.8) !important;
+  color: black
+}
+body > main > div:nth-child(2) > nav > ul > li:nth-child(3) > a {
+  background-color: rgb(255, 179, 64) !important;
+  color: black;
+}
+body > main > div:nth-child(2) > nav > ul > li:nth-child(4) > a {
+  background-color: rgb(64, 157, 255) !important;
+  color: black;
 }

@@ -15,7 +15,7 @@
         <a class="nav-link" data-toggle="tab" href="#css" role="tab">CSS  <%= fa_icon('css3') %></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#javascript" role="tab">JavaScript </a>
+        <a class="nav-link" data-toggle="tab" href="#javascript" role="tab">JavaScript <%= fa_icon("coffee") %></a>
       </li>
     </ul>
   </nav>
@@ -33,9 +33,7 @@
          </span>
        </div>
     <% end %>
-    <div class="col-md-6 col-md-offset-3 text-lg-center">
-      <%= paginate @snippets %>
-    </div>
+
   </div>
   <div class="tab-pane col-md-6 col-md-offset-3" id="html" role="tabpanel">
     <% @snippets.where({kind: "HTML"}).each do |snippet| %>
@@ -46,9 +44,7 @@
          </span>
        </div>
     <% end %>
-    <div class="col-md-6 col-md-offset-3 text-lg-center">
-      <%= paginate @snippets %>
-    </div>
+
   </div>
   <div class="tab-pane col-md-6 col-md-offset-3" id="css" role="tabpanel">
     <% @snippets.where({kind: "CSS"}).each do |snippet| %>
@@ -59,9 +55,7 @@
          </span>
        </div>
     <% end %>
-    <div class="col-md-6 col-md-offset-3 text-lg-center">
-      <%= paginate @snippets %>
-    </div>
+
   </div>
   <div class="tab-pane col-md-6 col-md-offset-3" id="javascript" role="tabpanel">
     <% @snippets.where({kind: "JavaScript"}).each do |snippet| %>
@@ -72,9 +66,7 @@
          </span>
        </div>
     <% end %>
-    <div class="col-md-6 col-md-offset-3 text-lg-center">
-      <%= paginate @snippets %>
-    </div>
+
   </div>
 </div>
 <% end %>
