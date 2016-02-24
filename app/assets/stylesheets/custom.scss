@@ -20,13 +20,19 @@ a.code-logo {
   display: inline-block;
   float: left;
 }
+
 #exCollapsingNavbar2 > ul {
   font-family: monospace;
 
   > strong > a.brand-homepage {
     font-size: 1.8em;
-    color: white;
+    color: rgb(235, 235, 235);
     font-family: monospace;
+    float: left;
+    padding-left: 10px;
+    &:hover {
+      color: white;
+    }
   }
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -51,6 +57,14 @@ div.highlight {
   font-size: 1.2em;
 }
 
+.all-public-snippets {
+  background-color: #252c41;
+  color: rgb(236, 236, 236);
+}
+.snippets-listing {
+  background-color: #dddfe6;
+  padding: 35px 0;
+}
 .snippet-Ruby {
   margin-top: 15px;
   padding: 10px;
@@ -72,7 +86,7 @@ div.tab-content  {
 
 #ruby {
   border-radius: 10px;
-  background-color: rgba(198, 47, 102, 0.2);
+  background-color: rgba(212, 69, 69, 0.39);
   color: rgb(56, 56, 56);
 
   div {
@@ -85,7 +99,7 @@ div.tab-content  {
     }
   }
   div:nth-child(2n) {
-    background-color:rgba(199, 0, 125, 0.2);
+    background-color:rgba(246, 16, 16, 0.34);
   }
 }
 
@@ -131,7 +145,7 @@ div.tab-content  {
 
 #javascript {
   border-radius: 10px;
-  background-color: rgba(92, 194, 232, 0.2);
+  background-color: rgba(117, 196, 226, 0.19);
   color: rgb(56, 56, 56);
 
   div {
@@ -145,7 +159,7 @@ div.tab-content  {
     }
   }
   div:nth-child(2n) {
-    background-color:rgba(79, 255, 244, 0.12);
+    background-color:rgba(77, 209, 201, 0.27);
   }
 }
 
@@ -165,15 +179,15 @@ nav.pagination {
 }
 
 body > main > div:nth-child(2) > nav > ul > li:nth-child(1) > a {
-  background-color: rgb(255, 64, 167) !important;
+  background-color: rgb(255, 64, 87) !important;
   color: black;
 }
 body > main > div:nth-child(2) > nav > ul > li:nth-child(2) > a {
-  background-color: rgba(64, 255, 77, 0.8) !important;
+  background-color: rgba(0, 201, 14, 0.71) !important;
   color: black
 }
 body > main > div:nth-child(2) > nav > ul > li:nth-child(3) > a {
-  background-color: rgb(255, 179, 64) !important;
+  background-color: rgba(254, 129, 0, 0.75) !important;
   color: black;
 }
 body > main > div:nth-child(2) > nav > ul > li:nth-child(4) > a {
