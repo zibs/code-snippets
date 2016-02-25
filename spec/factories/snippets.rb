@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :snippet do
-    kind "MyString"
-    title "MyString"
-    code "MyText"
+    association :user, factory: :user
+    kind  { %w(Ruby HTML CSS JavaScript).sample }
+    title { Faker::Hipster.words(3).join(" ") }
+    code  { Faker::Shakespeare.hamlet_quote }
     private false
-    user nil
   end
 end
